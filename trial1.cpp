@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include<iostream>
 #include<string>
-
-std::string converttostring(std::string filename = "/Users/sayash/Desktop/Similarity/file.txt")	//default local file
+using namespace std;
+std::string converttostring(std::string filename = "/Users/sayash/Desktop/Similarity/file1.txt")	//default local file
 {
   std::string s;
   char in_name[80];
@@ -32,20 +32,39 @@ std::string converttostring(std::string filename = "/Users/sayash/Desktop/Simila
   return s;
 }
 
-int levenshtein(std::string s1, std::string s2)
-{
-  int count=0;
+int levenshtein(std::string a, std::string b){
+  int len_a = a.length();
+  int len_b = b.length();
+  int d[len_a + 1][len_b+1];
 
-  return count;
+  for(int i = 0; i < len_a + 1; i++)
+    d[i][0] = i;
+
+  for(int j = 0; j < len_b + 1; j++)
+    d[0][j] = j;
+
+  for(int i = 1; i < len_a + 1; i++){
+    for(int j = 1; j < len_b + 1; j++){
+      if(a[i - 1] == b[j - 1]){
+        d[i][j] = d[i - 1][j - 1];
+      }
+      else{
+        d[i][j] = 1 + min(min(d[i][j-1],d[i-1][j]),d[i-1][j-1]);
+      }
+    }
+  }
+
+  int answer = d[len_a][len_b];
+
+  return answer;
 }
+
 
 int main()
 {
     std::string s1=converttostring();   //file1 to be compared
-		std::cout<<s1; //testing
-    //std::string s2=converttostring();   //file2 to be compared
+    std::string s2=converttostring();   //file2 to be compared
+    std::cout<<levenshtein(s1,s2);
 
-    // int similarity = levenshtein(s1,s2);
-    // std::cout<<similarity<<std::endl;
     return 0;
 }
