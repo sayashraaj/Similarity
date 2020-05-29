@@ -62,8 +62,8 @@ int levenshtein(std::string a, std::string b){
 
 int main()
 {
-    std::string s1=converttostring();   //file1 to be compared
-    std::string s2=converttostring("/Users/sayash/Desktop/Similarity/file1.txt");   //file2 to be compared
+    std::string s1=converttostring("/Users/sayash/Desktop/Similarity/file1.txt");   //file1 to be compared
+    std::string s2=converttostring("/Users/sayash/Desktop/Similarity/file2.txt");   //file2 to be compared
     std::cout<<levenshtein(s1,s2);
 
     return 0;
