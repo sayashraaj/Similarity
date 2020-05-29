@@ -42,6 +42,7 @@ int levenshtein(std::string s1, std::string s2)
 int main()
 {
     std::string s1=converttostring();   //file1 to be compared
+		std::cout<<s1; //testing
     //std::string s2=converttostring();   //file2 to be compared
 
     // int similarity = levenshtein(s1,s2);
