@@ -2,7 +2,7 @@
 #include<iostream>
 #include<string>
 
-std::string converttostring(std::string filename = "/Users/sayash/Desktop/comp_prog/Levenshtein/file.txt")
+std::string converttostring(std::string filename = "/Users/sayash/Desktop/Similarity/file.txt")
 {
   std::string s;
   char in_name[80];
@@ -32,7 +32,7 @@ std::string converttostring(std::string filename = "/Users/sayash/Desktop/comp_p
   return s;
 }
 
-int levenshtein(string s1, string s2)
+int levenshtein(std::string s1, std::string s2)
 {
   int count=0;
 
@@ -44,7 +44,7 @@ int main()
     std::string s1=converttostring();   //file1 to be compared
     //std::string s2=converttostring();   //file2 to be compared
 
-    int similarity = levenshtein(s1,s2);
-    std::cout<<similarity<<std::endl;
+    // int similarity = levenshtein(s1,s2);
+    // std::cout<<similarity<<std::endl;
     return 0;
 }
