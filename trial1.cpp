@@ -1,23 +1,50 @@
-#include <iostream>
-#include <string>
-#include <fstream>
-using namespace std;
+#include <stdio.h>
+#include<iostream>
+#include<string>
 
-int main () {
-string s;
-string sTotal;
+std::string converttostring(std::string filename = "/Users/sayash/Desktop/comp_prog/Levenshtein/file.txt")
+{
+  std::string s;
+  char in_name[80];
+  FILE *in_file;
+  int ch, character = 0, line = 0, space = 0, tab = 0;
 
-ifstream in;
-in.open("/Users/sayash/Desktop/comp_prog/Levenshtein/file.txt");
+  printf("Enter file name:\n");
+  scanf("%s", in_name);
 
-while(!in.eof()) {
-	getline(in, s);
-	sTotal += s;
+  in_file = fopen(filename.c_str(), "r");
 
+  if (in_file == NULL)
+    s="invalid filename";
+  else
+  {
+      while ((ch = fgetc(in_file)) != EOF)
+      {
+          if (ch == ' ' || ch == '\n' || ch == '\t') continue;
+          else
+          {
+            character++;
+            s.push_back(ch);
+          }
+      }
+  }
+  fclose(in_file);
+  return s;
 }
 
-cout << sTotal;
+int levenshtein(string s1, string s2)
+{
+  int count=0;
 
-in.close();
-return 0;
+  return count;
+}
+
+int main()
+{
+    std::string s1=converttostring();   //file1 to be compared
+    //std::string s2=converttostring();   //file2 to be compared
+
+    int similarity = levenshtein(s1,s2);
+    std::cout<<similarity<<std::endl;
+    return 0;
 }
