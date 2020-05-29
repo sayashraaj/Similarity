@@ -2,7 +2,7 @@
 #include<iostream>
 #include<string>
 
-std::string converttostring(std::string filename = "/Users/sayash/Desktop/Similarity/file.txt")
+std::string converttostring(std::string filename = "/Users/sayash/Desktop/Similarity/file.txt")	//default local file
 {
   std::string s;
   char in_name[80];
