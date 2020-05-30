@@ -15,9 +15,14 @@ std::string converttostring(std::string filename = "/Users/sayash/Desktop/Simila
     std::cout<<"invalid filename\n";
   else
   {
-      while ((ch = fgetc(in_file)) != EOF)  //
+      while ((ch = fgetc(in_file)) != EOF)  //fgetc gets character and points to next character
       {
-          if (ch == ' ' || ch == '\n' || ch == '\t') continue;
+          if (ch == ' ' || ch == '\n' || ch == '\t') continue;  //de-formatting the code
+          /*
+          C++ ignores spaces between statements, tabs, and newline characters
+          in order to reduce file size by a significant amount, the characters can be deleted and ignored
+          from edit distance in levenshtein
+          */
           else
           {
             s.push_back(ch);
