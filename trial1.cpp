@@ -77,12 +77,12 @@ int main()
     std::string s1=converttostring("/Users/sayash/Desktop/Similarity/file1.txt");   //file1 to be compared
     std::string s2=converttostring("/Users/sayash/Desktop/Similarity/file2.txt");   //file2 to be compared
 
-    if(s1=="invalid filename\n" || s2=="invalid filename\n")
+    if(s1=="invalid filename\n" || s2=="invalid filename\n")    //error in filename
     {
       std::cout<<"Invalid filename\n";
     }
 
-    std::cout<<levenshtein(s1,s2);
+    std::cout<<levenshtein(s1,s2);    //final output
 
     return 0;
 }
