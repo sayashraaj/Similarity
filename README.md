@@ -1,5 +1,7 @@
 # Similarity
 
+CFI Project for content similarity detection in C++ code
+
 # ChangeLog
 
 reading input
