@@ -29,7 +29,7 @@ std::string converttostring(std::string filename = "/Users/sayash/Desktop/Simila
           }
       }
   }
-  fclose(in_file);
+  fclose(in_file);      //closing the stream is very important
   return s;
 }
 
@@ -63,8 +63,19 @@ int levenshtein(std::string a, std::string b){
 
 int main()
 {
+    std::string filename1="/Users/sayash/Desktop/Similarity/file1.txt";
+    std::string filename2="/Users/sayash/Desktop/Similarity/file2.txt";
+    cin>>filename1;
+    cin>>filename2;
+
     std::string s1=converttostring("/Users/sayash/Desktop/Similarity/file1.txt");   //file1 to be compared
     std::string s2=converttostring("/Users/sayash/Desktop/Similarity/file2.txt");   //file2 to be compared
+
+    if(s1=="invalid filename\n" || s2=="invalid filename\n")
+    {
+      std::cout<<"Invalid filename\n";
+    }
+    
     std::cout<<levenshtein(s1,s2);
 
     return 0;
