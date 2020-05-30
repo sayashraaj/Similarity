@@ -1,3 +1,27 @@
-abcde
-iejfiejfe
-iejfiefiji
+#include<iostream>
+#include<deque>
+using namespace std;
+int main()
+{
+	deque<int> d(5);
+	
+	for(int i=0;i<5;i++)
+	{
+		d[i]=i+1;
+	}
+
+	d.push_back(10);
+	d.push_front(100);
+
+	/*
+	output:
+
+		100 this is front
+		1
+		2
+		3
+		4
+		5
+		10 this is back
+	*/
+}
