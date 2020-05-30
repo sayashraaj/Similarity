@@ -1,6 +1,7 @@
 # Similarity
 
 #ChangeLog
+
 reading input
 remove spaces and indentation in real time: deformatting<br>
 added null file error display<br>
