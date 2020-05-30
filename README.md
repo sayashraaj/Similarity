@@ -1,6 +1,6 @@
 # Similarity
 
-#ChangeLog
+# ChangeLog
 
 reading input
 remove spaces and indentation in real time: deformatting<br>
