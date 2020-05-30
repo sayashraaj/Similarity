@@ -5,22 +5,21 @@ using namespace std;
 
 std::string converttostring(std::string filename = "/Users/sayash/Desktop/Similarity/file1.txt")	//default local file
 {
-  std::string s;
-  FILE *in_file;
-  int ch, character = 0, line = 0, space = 0, tab = 0;
+  std::string s;    //string to return
+  FILE *in_file;    //open stream
+  int ch;
 
   in_file = fopen(filename.c_str(), "r");   //open file as character string
 
-  if (in_file == NULL)
-    s="invalid filename";
+  if (in_file == NULL)                      //filename error handled
+    std::cout<<"invalid filename\n";
   else
   {
-      while ((ch = fgetc(in_file)) != EOF)
+      while ((ch = fgetc(in_file)) != EOF)  //
       {
           if (ch == ' ' || ch == '\n' || ch == '\t') continue;
           else
           {
-            character++;
             s.push_back(ch);
           }
       }
