@@ -65,8 +65,14 @@ int main()
 {
     std::string filename1="/Users/sayash/Desktop/Similarity/file1.txt";
     std::string filename2="/Users/sayash/Desktop/Similarity/file2.txt";
-    cin>>filename1;
-    cin>>filename2;
+    std::cout<<"enter filename 1 ";
+    std::cin>>filename1;
+    std::cout<<"enter filename 2 ";
+    std::cin>>filename2;
+    cout<<"\n";
+
+    // std::string s1=converttostring(filename1);
+    // std::string s2=converttostring(filename2);
 
     std::string s1=converttostring("/Users/sayash/Desktop/Similarity/file1.txt");   //file1 to be compared
     std::string s2=converttostring("/Users/sayash/Desktop/Similarity/file2.txt");   //file2 to be compared
@@ -75,7 +81,7 @@ int main()
     {
       std::cout<<"Invalid filename\n";
     }
-    
+
     std::cout<<levenshtein(s1,s2);
 
     return 0;
