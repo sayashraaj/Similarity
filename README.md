@@ -6,3 +6,4 @@ added null file error display
 added filename2
 added input for filename
 default filename in function
+added levenshtein function
