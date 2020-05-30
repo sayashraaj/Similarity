@@ -2,17 +2,14 @@
 #include<iostream>
 #include<string>
 using namespace std;
+
 std::string converttostring(std::string filename = "/Users/sayash/Desktop/Similarity/file1.txt")	//default local file
 {
   std::string s;
-  char in_name[80];
   FILE *in_file;
   int ch, character = 0, line = 0, space = 0, tab = 0;
 
-  printf("Enter file name:\n");
-  scanf("%s", in_name);
-
-  in_file = fopen(filename.c_str(), "r");
+  in_file = fopen(filename.c_str(), "r");   //open file as character string
 
   if (in_file == NULL)
     s="invalid filename";
