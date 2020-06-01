@@ -77,6 +77,9 @@ int main()
     std::string s1=converttostring("/Users/sayash/Desktop/Similarity/file1.txt");   //file1 to be compared
     std::string s2=converttostring("/Users/sayash/Desktop/Similarity/file2.txt");   //file2 to be compared
 
+    // std::cout<<s1<<std::endl;
+    // std::cout<<s2<<std::endl;
+
     if(s1=="invalid filename\n" || s2=="invalid filename\n")    //error in filename
     {
       std::cout<<"Invalid filename\n";
