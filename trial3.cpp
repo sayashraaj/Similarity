@@ -60,7 +60,7 @@ std::string converttostring(std::string filename = "/Users/sayash/Desktop/Simila
             }
             if (!(ch == ' ' || ch == '\n' || ch == '\t')) s.push_back(ch);
             if(mp.find(temp_word)==mp.end()) s+=temp_word;
-            cout<<temp_word<<endl;
+            // cout<<temp_word<<endl;
             if(keywords.find(temp_word)!=keywords.end()) {flag++;cout<<1<<endl;}
             temp_word="";
           }
@@ -75,5 +75,6 @@ std::string converttostring(std::string filename = "/Users/sayash/Desktop/Simila
 
 int main(){
   insertion();
-std::cout<<converttostring("/Users/sayash/Desktop/Similarity/file1.txt");
+std::cout<<converttostring("/Users/sayash/Desktop/Similarity/file1.txt")<<std::endl;
+std::cout<<converttostring("/Users/sayash/Desktop/Similarity/file3.txt")<<std::endl;
 }

@@ -1,0 +1,27 @@
+#include<iostream>
+#include<deque>
+using namespace std;
+int main()
+{
+	deque<int> wolf(5);
+
+	for(int into=0;into<5;into++)
+	{
+		wolf[into]=into+1;
+	}
+
+	wolf.push_back(10);
+	wolf.push_front(100);
+
+	/*
+	output:
+
+		100 this is front
+		1
+		2
+		3
+		4
+		5
+		10 this is back
+	*/
+}
