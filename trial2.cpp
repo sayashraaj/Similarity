@@ -1,36 +1,53 @@
 #include <stdio.h>
 #include<iostream>
 #include<string>
+#include<unordered_set>
+#include<fstream>
 using namespace std;
+/*
+Unordered_set storing keywords
+*/
+unordered_set<string> mp;
+unordered_set<string> keywords;
+void insertion(){
+  keywords.insert("int");
+  keywords.insert("float");
+  keywords.insert("void");
+  keywords.insert("return");
+}
 
 std::string converttostring(std::string filename = "/Users/sayash/Desktop/Similarity/file1.txt")	//default local file
 {
-  std::string s;    //string to return
-  FILE *in_file;    //open stream
-  int ch;
+    std::ifstream file;
+    file.open (filename);
+    if (!file.is_open()) return "invalid filename";
 
-  in_file = fopen(filename.c_str(), "r");   //open file as character string
-
-  if (in_file == NULL)                      //filename error handled
-    std::cout<<"invalid filename\n";
-  else
-  {
-      while ((ch = fgetc(in_file)) != EOF)  //fgetc gets character and points to next character
+    string ans;
+    string word;
+    int flag=0;
+    while (file >> word)
+    {
+      if(flag==1)
       {
-          if (ch == ' ' || ch == '\n' || ch == '\t') continue;  //de-formatting the code
-          /*
-          C++ ignores spaces between statements, tabs, and newline characters
-          in order to reduce file size by a significant amount, the characters can be deleted and ignored
-          from edit distance in levenshtein
-          */
-          else
-          {
-            s.push_back(ch);
-          }
+        if(mp.find(word)!=mp.end())
+        {
+          word="";
+        }
+        else
+        {
+          mp.insert(word);
+        }
+        flag=0;
+        continue;
       }
-  }
-  fclose(in_file);      //closing the stream is very important
-  return s;
+      if(keywords.find(word)!=keywords.end())
+      {
+        flag=1;
+      }
+      ans+=word;
+    }
+    return ans;
+
 }
 
 int levenshtein(std::string a, std::string b){
@@ -63,6 +80,8 @@ int levenshtein(std::string a, std::string b){
 
 int main()
 {
+    insertion();
+
     std::string filename1="/Users/sayash/Desktop/Similarity/file1.txt";
     std::string filename2="/Users/sayash/Desktop/Similarity/file2.txt";
     std::cout<<"enter filename 1 ";
@@ -77,15 +96,15 @@ int main()
     std::string s1=converttostring("/Users/sayash/Desktop/Similarity/file1.txt");   //file1 to be compared
     std::string s2=converttostring("/Users/sayash/Desktop/Similarity/file2.txt");   //file2 to be compared
 
-    // std::cout<<s1<<std::endl;
-    // std::cout<<s2<<std::endl;
+    std::cout<<s1<<std::endl;
+    std::cout<<s2<<std::endl;
 
     if(s1=="invalid filename\n" || s2=="invalid filename\n")    //error in filename
     {
       std::cout<<"Invalid filename\n";
     }
 
-    std::cout<<s1.size()<<" "<<s2.size()<<" "<<levenshtein(s1,s2);    //final output
+    std::cout<<levenshtein(s1,s2);    //final output
 
     return 0;
 }
