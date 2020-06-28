@@ -1,3 +1,4 @@
+//USES STRCMP INBUILT
 //time
 #include<chrono>
 
@@ -119,7 +120,10 @@ cout<<s1<<endl;
 cout<<s2<<endl;
 
 //levenshtein comparison
-std::cout<<levenshtein(s1,s2)<<std::endl;  //final output
+// std::cout<<levenshtein(s1,s2)<<std::endl;  //final output
+
+//strcmp
+std::cout<<strcmp(s1.c_str(),s2.c_str())<<std::endl;
 
 //stopping clock
 // std::cout<<"time taken is: "<<(double)(clock() - tStart)/CLOCKS_PER_SEC<<std::endl;

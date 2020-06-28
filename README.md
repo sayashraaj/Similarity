@@ -11,3 +11,12 @@ added filename2<br>
 added input for filename<br>
 default filename in function<br>
 added levenshtein function<br>
+
+Added execution time function
+Changed execution time function
+
+Used strcmp, mild execution time reduction
+
+SYSTEM INFO:
+Atom text editor
+GPP-Compiler package for c and c++
