@@ -1,9 +1,12 @@
+#include<chrono>
+
 #include <stdio.h>
 #include<iostream>
 #include<string>
 #include<unordered_set>
 #include<fstream>
 using namespace std;
+using namespace std::chrono;
 /*
 Unordered_set storing keywords
 */
@@ -75,6 +78,14 @@ std::string converttostring(std::string filename = "/Users/sayash/Desktop/Simila
 
 int main(){
   insertion();
+
+auto start = high_resolution_clock::now();
+
 std::cout<<converttostring("/Users/sayash/Desktop/Similarity/file1.txt")<<std::endl;
 std::cout<<converttostring("/Users/sayash/Desktop/Similarity/file3.txt")<<std::endl;
+
+auto stop = high_resolution_clock::now();
+auto duration = duration_cast<microseconds>(stop - start);
+cout << "Time taken by function: "
+         << duration.count() << " microseconds" << endl;
 }
