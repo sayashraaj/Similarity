@@ -119,7 +119,7 @@ cout<<s1<<endl;
 cout<<s2<<endl;
 
 //levenshtein comparison
-std::cout<<levenshtein(s1,s2);//final output
+std::cout<<levenshtein(s1,s2);  //final output
 
 //stopping clock
 auto stop = high_resolution_clock::now();
