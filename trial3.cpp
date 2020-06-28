@@ -110,13 +110,17 @@ int levenshtein(std::string a, std::string b){
 int main(){
   insertion();
 
+//starting clock
 auto start = high_resolution_clock::now();
 
-std::cout<<converttostring("/Users/sayash/Desktop/Similarity/file1.txt")<<std::endl;
-std::cout<<converttostring("/Users/sayash/Desktop/Similarity/file3.txt")<<std::endl;
+std::string s1 = converttostring("/Users/sayash/Desktop/Similarity/file1.txt")<<std::endl;
+std::string s2 = converttostring("/Users/sayash/Desktop/Similarity/file3.txt")<<std::endl;
 
+//levenshtein comparison
+std::cout<<levenshtein(s1,s2);    //final output
+
+//stopping clock
 auto stop = high_resolution_clock::now();
 auto duration = duration_cast<microseconds>(stop - start);
-cout << "Time taken by function: "
-         << duration.count() << " microseconds" << endl;
+cout << "Time taken: "<< duration.count() << " microseconds" << endl;
 }
