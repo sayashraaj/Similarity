@@ -113,8 +113,8 @@ int main(){
 //starting clock
 auto start = high_resolution_clock::now();
 
-std::string s1 = converttostring("/Users/sayash/Desktop/Similarity/file1.txt")<<std::endl;
-std::string s2 = converttostring("/Users/sayash/Desktop/Similarity/file3.txt")<<std::endl;
+std::string s1 = converttostring("/Users/sayash/Desktop/Similarity/file1.txt");
+std::string s2 = converttostring("/Users/sayash/Desktop/Similarity/file3.txt");
 
 //levenshtein comparison
 std::cout<<levenshtein(s1,s2);    //final output
