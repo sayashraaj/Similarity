@@ -20,3 +20,7 @@ Used strcmp, mild execution time reduction
 SYSTEM INFO:
 Atom text editor
 GPP-Compiler package for c and c++
+
+Execution time:
+file to string: 206 ms
+file comparision: 19500ms
