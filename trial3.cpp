@@ -66,7 +66,7 @@ std::string converttostring(std::string filename = "/Users/sayash/Desktop/Simila
             if (!(ch == ' ' || ch == '\n' || ch == '\t')) s.push_back(ch);
             if(mp.find(temp_word)==mp.end()) s+=temp_word;
             // cout<<temp_word<<endl;
-            if(keywords.find(temp_word)!=keywords.end()) {flag++;cout<<1<<endl;}
+            if(keywords.find(temp_word)!=keywords.end()) {flag++;}//cout<<1<<endl; inside {}
             temp_word="";
           }
           else{
@@ -115,6 +115,8 @@ auto start = high_resolution_clock::now();
 
 std::string s1 = converttostring("/Users/sayash/Desktop/Similarity/file1.txt");
 std::string s2 = converttostring("/Users/sayash/Desktop/Similarity/file3.txt");
+cout<<s1<<endl;
+cout<<s2<<endl;
 
 //levenshtein comparison
 std::cout<<levenshtein(s1,s2);    //final output
