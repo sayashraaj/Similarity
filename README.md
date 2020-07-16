@@ -23,4 +23,4 @@ GPP-Compiler package for c and c++
 
 Execution time:
 file to string: 206 ms
-file comparision: 19500ms
+file comparision: 1578 ms with levenshtein distance

@@ -125,6 +125,7 @@ cout<<s2<<endl;
 //strcmp
 std::cout<<strcmp(s1.c_str(),s2.c_str())<<std::endl;
 
+
 //stopping clock
 // std::cout<<"time taken is: "<<(double)(clock() - tStart)/CLOCKS_PER_SEC<<std::endl;
 auto stop = high_resolution_clock::now();
